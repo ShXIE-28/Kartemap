@@ -1,0 +1,27 @@
+,airport,city,country,IATA,Latitude,Longitude,Altitude,timezone,tz database
+36,General Edward Lawrence Logan International Airport,Boston,United States,BOS,42.36429977,-71.00520325,20,-5,America/New_York
+57,San Francisco International Airport,San Francisco,United States,SFO,37.61899948,-122.375,13,-8,America/Los_Angeles
+72,Los Angeles International Airport,Los Angeles,United States,LAX,33.94250107,-118.4079971,125,-8,America/Los_Angeles
+89,Dallas Love Field,Dallas,United States,DAL,32.8470993,-96.85179901,487,-6,America/Chicago
+106,Ronald Reagan Washington National Airport,Washington,United States,DCA,38.8521,-77.037697,15,-5,America/New_York
+159,Miami International Airport,Miami,United States,MIA,25.79319954,-80.29060364,8,-5,America/New_York
+160,Seattle Tacoma International Airport,Seattle,United States,SEA,47.44900131,-122.3089981,433,-8,America/Los_Angeles
+275,La Guardia Airport,New York,United States,LGA,40.77719879,-73.87259674,21,-5,America/New_York
+290,Washington Dulles International Airport,Washington,United States,IAD,38.94449997,-77.45580292,312,-5,America/New_York
+297,Dade Collier Training and Transition Airport,Miami,United States,TNT,25.86179924,-80.89700317,13,-5,America/New_York
+301,Boeing Field King County International Airport,Seattle,United States,BFI,47.52999878,-122.302002,21,-8,America/Los_Angeles
+321,Chicago Midway International Airport,Chicago,United States,MDW,41.7859993,-87.75240326,620,-6,America/Chicago
+325,Denver International Airport,Denver,United States,DEN,39.86169815,-104.6729965,5431,-7,America/Denver
+364,Opa-locka Executive Airport,Miami,United States,OPF,25.90699959,-80.27839661,8,-5,America/New_York
+370,John F Kennedy International Airport,New York,United States,JFK,40.63980103,-73.77890015,13,-5,America/New_York
+386,Nellis Air Force Base,Las Vegas,United States,LSV,36.23619843,-115.0339966,1870,-8,America/Los_Angeles
+390,Waukegan National Airport,Chicago,United States,UGN,42.42219925,-87.86789703,727,-6,America/Chicago
+402,Chicago O'Hare International Airport,Chicago,United States,ORD,41.97859955,-87.90480042,672,-6,America/Chicago
+429,Minneapolis-St Paul International/Wold-Chamberlain Airport,Minneapolis,United States,MSP,44.88199997,-93.22180176,841,-6,America/Chicago
+448,McCarran International Airport,Las Vegas,United States,LAS,36.08010101,-115.1520004,2181,-8,America/Los_Angeles
+535,Centennial Airport,Denver,United States,APA,39.57009888,-104.848999,5885,-7,America/Denver
+715,North Las Vegas Airport,Las Vegas,United States,VGT,36.21070099,-115.1940002,2205,-8,America/Los_Angeles
+975,Dallas Executive Airport,Dallas,United States,RBD,32.68090057,-96.86820221,660,-6,America/Chicago
+982,Whiteman Airport,Los Angeles,United States,WHP,34.25930023,-118.413002,1003,-8,America/Los_Angeles
+1071,Chicago Meigs Airport,Chicago,United States,CGX,41.85879898,-87.60790253,593,-6,America/Chicago
+1248,Front Range Airport,Denver,United States,FTG,39.78530121,-104.5429993,5512,-6,\N
