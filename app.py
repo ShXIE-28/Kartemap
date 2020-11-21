@@ -20,7 +20,7 @@ from algorithms.shortest_path import Dijkstra
 from graph.network import Network
 from geopy.distance import great_circle
 from Layouts.flight_map import create_map, line_map
-import base64
+
 
 city_pop = pd.read_csv('.\\GlobalAirportDatabase\\MetroAreas.csv')
 city_pop['2019 estimate'] = city_pop['2019 estimate'].apply(lambda x:x.replace(',',''))
@@ -28,7 +28,7 @@ airport = pd.read_csv('.\\GlobalAirportDatabase\\airports_new.csv')
 route = pd.read_csv(".\\GlobalAirportDatabase\\route_new.csv")
 city = ["Seattle","San Francisco","Las Vegas","Denver","Minneapolis","Dallas",
         "Chicago","Washington","Boston","New York","Los Angeles","Miami"]
-
+image = pd.read_csv(".\\Layouts\\image.csv")
 # merge datasets
 air_route = pd.merge(route,airport,how='left',
                          left_on=['source'],right_on=['IATA'])
@@ -152,9 +152,17 @@ app.layout = html.Div([
                                 html.Br(),
                                 html.Div(id='tz_s'),
                                 html.Br(),
-                                html.Img(id='s_fig')
+                                html.Div(
+                                    children=html.Img(
+                                        id='s_fig',
+                                        style={
+                                            'width': 500,
+                                            'height': 250                                   
+                                        }
+                                    )
+                                )   
                                 ]),
-                    ],style={"width": "25rem"}),width={"offset":1}),
+                    ],style={"width": "35rem"}),width={"offset":1}),
             dbc.Col(dbc.Card([
                         dbc.CardHeader("End City"),
                         dbc.CardBody([
@@ -164,15 +172,25 @@ app.layout = html.Div([
                                 html.Br(),
                                 html.Div(id='tz_e'),
                                 html.Br(),
-                                html.Img(id='e_fig')
-                                ]),
-                    ],style={"width": "25rem"})),
-            dbc.Col(dbc.Card([
+                                html.Div(
+                                    children=html.Img(
+                                        id='e_fig',
+                                        style={
+                                           'width': 500,
+                                           'height': 250                                   
+                                        }
+                                    )
+                                )   
+                        ]),
+                    ],style={"width": "35rem"}))
+            ],justify="around"),
+    dbc.Row(dbc.Col(html.Br())),
+    dbc.Row(dbc.Col(dbc.Card([
                         dbc.CardHeader("Tips"),
                         dbc.CardBody(
                                 html.Div(id='tip'))
-                    ],style={"width": "20rem"}))
-            ]),
+                        ],style={"height": "7rem",'width':'30rem'}),
+                        width={"offset":1})),
     dbc.Row(dbc.Col(html.Br())),
     dbc.Row(dbc.Col(html.Br())),
     dbc.Row(dbc.Col(html.Br())),
@@ -309,17 +327,10 @@ def timezone(city_s,city_e):
          Input('city_dropdownE','value')]
         )
 def show_fig(city_s,city_e):
-    image_filename = '.\\Layouts\\'+str(city_s)+'.jpg'
-    s_source = base64.b64encode(open(image_filename, 'rb').read())
+    s_src = image.loc[image['city']==city_s,'image']
+    e_src = image.loc[image['city']==city_e,'image']
+    return s_src,e_src
     
-    image_filename = '.\\Layouts\\'+str(city_e)+'.jpg'
-    e_source = base64.b64encode(open(image_filename, 'rb').read())
-    
-#    s_source = '.\\Layouts\\'+str(city_s)+'.jpg'
-#    e_source = '.\\Layouts\\'+str(city_e)+'.jpg'
-    return 'data:image/png;base64,{}'.format(s_source),'data:image/png;base64,{}'.format(e_source)
-    
-
 # travelling tips
 @app.callback(
         Output('tip','children'),
